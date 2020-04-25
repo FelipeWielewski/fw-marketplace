@@ -7,7 +7,7 @@ Os **compradores** poderão se cadastradas na plataforma e consultar produtos pa
 
 Os **vendedores** poderão se cadastrar na plataforma e cadastrar produtos para a venda.
 
-A venda será dada pela criação de um 'pedido', relacionando o vendedor, comprador e o produto.
+A **venda** será dada pela criação de um 'pedido', relacionando o vendedor, comprador e o produto.
 
 ### Conhecimentos a serem praticados:
 Esse projeto tem como objetivo iniciar você em .NET Core, utilizando recursos:
