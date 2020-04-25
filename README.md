@@ -1,4 +1,4 @@
-# [Compartilhando Conhecimento] - Projeto: Marketplace Simples
+# [CC] Projeto: Marketplace Simples
 
 ### Objetivo: 
 Desenvolver junto com a comunidade uma API de marketplace simples, no qual temos 2 tipos de usuários (Compradores, Vendedores).
