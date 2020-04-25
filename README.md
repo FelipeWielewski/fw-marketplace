@@ -16,13 +16,12 @@ Esse projeto tem como objetivo iniciar você em .NET Core, utilizando recursos:
 * APIs
 
 **Lista de atividades:**
-
- * Desenhar a solução e escopo
- * Criar o projeto inicial
- * Criar modelo de dados
- * Gerenciamento de Comprador - _Criar/Editar/Excluir_
- * Gerenciamento do Vendedor - _Criar/Editar/Excluir_
- * Gerenciamento de Produtos - _Criar/Editar/Excluir_
- * Busca por produtos
- * Gerenciamento de Venda - _Nova Venda/Relatório de vendas_
- * Finalização do projeto - _Lições aprendidadas_
+ - [ ] Desenhar a solução e escopo
+ - [ ] Criar o projeto inicial
+ - [ ] Criar modelo de dados
+ - [ ] Gerenciamento de Comprador - _Criar/Editar/Excluir_
+ - [ ] Gerenciamento do Vendedor - _Criar/Editar/Excluir_
+ - [ ] Gerenciamento de Produtos - _Criar/Editar/Excluir_
+ - [ ] Busca por produtos
+ - [ ] Gerenciamento de Venda - _Nova Venda/Relatório de vendas_
+ - [ ] Finalização do projeto - _Lições aprendidadas_
