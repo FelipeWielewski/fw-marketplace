@@ -4,7 +4,9 @@
 Desenvolver junto com a comunidade uma API de marketplace simples, no qual temos 2 tipos de usuários (Compradores, Vendedores).
 
 Os **compradores** poderão se cadastradas na plataforma e consultar produtos para comprar.
+
 Os **vendedores** poderão se cadastrar na plataforma e cadastrar produtos para a venda.
+
 A venda será dada pela criação de um 'pedido', relacionando o vendedor, comprador e o produto.
 
 ### Conhecimentos a serem praticados:
