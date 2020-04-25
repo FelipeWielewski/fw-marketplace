@@ -15,6 +15,10 @@ Esse projeto tem como objetivo iniciar você em .NET Core, utilizando recursos:
 * MySQL
 * APIs
 
+### Instagram:
+Será publicado no Instagram conteúdos de como desenvolver o projeto e dicas relacionadas aos recursos utilizados.
+https://www.instagram.com/fwdeveloper/
+
 **Lista de atividades:**
  - [ ] Desenhar a solução e escopo
  - [ ] Criar o projeto inicial
