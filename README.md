@@ -7,8 +7,6 @@ Os **compradores** poderão se cadastradas na plataforma e consultar produtos pa
 
 Os **vendedores** poderão se cadastrar na plataforma e cadastrar produtos para a venda.
 
-A **venda** será dada pela criação de um 'pedido', relacionando o vendedor, comprador e o produto.
-
 ### Conhecimentos a serem praticados:
 Esse projeto tem como objetivo iniciar você em .NET Core, utilizando recursos:
 * .NET Core 3.1
@@ -29,5 +27,4 @@ https://www.instagram.com/fwdeveloper/
  - [ ] Gerenciamento do Vendedor - _Criar/Editar/Excluir_
  - [ ] Gerenciamento de Produtos - _Criar/Editar/Excluir_
  - [ ] Busca por produtos
- - [ ] Gerenciamento de Venda - _Nova Venda/Relatório de vendas_
  - [ ] Finalização do projeto - _Lições aprendidadas_
