@@ -20,17 +20,19 @@ namespace FW.Marketplace
             Configuration = configuration;
         }
 
+        //Interface que carrega arquivo de configuração -> appsettings.json
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        //metodo responsavel por adicionar serviços ao seu sistema -> d.i
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        //utilizado para você fazer as configurações iniciais, antes de iniciar seu servidor
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            //criar regras especificas para desenvolvimento
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -40,8 +42,10 @@ namespace FW.Marketplace
 
             app.UseRouting();
 
+            //manipular authorização
             app.UseAuthorization();
 
+            //definir rotas customizadas
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
