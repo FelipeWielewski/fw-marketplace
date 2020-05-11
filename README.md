@@ -20,11 +20,13 @@ Será publicado no Instagram conteúdos de como desenvolver o projeto e dicas re
 https://www.instagram.com/fwdeveloper/
 
 **Lista de atividades:**
- - [ ] Desenhar a solução e escopo
- - [ ] Criar o projeto inicial
- - [ ] Criar modelo de dados
+ - [X] Desenhar a solução e escopo
+ - [X] Criar o projeto inicial
+ - [X] Criar modelo de dados
+ - [ ] Configuração do Swagger
  - [ ] Gerenciamento de Comprador - _Criar/Editar/Excluir_
  - [ ] Gerenciamento do Vendedor - _Criar/Editar/Excluir_
  - [ ] Gerenciamento de Produtos - _Criar/Editar/Excluir_
  - [ ] Busca por produtos
+ - [ ] Configuração de autenticação
  - [ ] Finalização do projeto - _Lições aprendidadas_
