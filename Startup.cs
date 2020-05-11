@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FW.Marketplace.Interfaces;
+using FW.Marketplace.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +28,9 @@ namespace FW.Marketplace
         //metodo responsavel por adicionar serviços ao seu sistema -> d.i
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IAccountService, AccountService>();
             services.AddControllers();
         }
 

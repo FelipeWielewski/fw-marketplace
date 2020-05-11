@@ -1,44 +1,48 @@
-﻿using FW.Marketplace.Model;
+﻿using FW.Marketplace.Interfaces;
 using FW.Marketplace.ViewModel;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Threading.Tasks;
 
 namespace FW.Marketplace.Controllers
 {
     [Route("[controller]")]
     public class ProductController : Controller
     {
-        //TO-DO: Injetar serviços
-        public ProductController()
+        readonly IProductService _productService;
+
+        public ProductController(IProductService productService)
         {
+            _productService = productService;
         }
         
         [HttpGet("{productId}")]
-        public IActionResult GetById([FromQuery] string productId)
+        public async Task<IActionResult> GetById([FromQuery] Guid productId)
         {
-            //TO-DO: codigo para obter um produto especifico
-            return Ok(productId);
+            var product = await _productService.GetByIdAsync(productId);
+            return Ok(product);
         }
 
-        //ALERTA PARA GETS IGUAIS
         [HttpGet("user/{userId}")]
-        public IActionResult GetByUserId([FromQuery] string userId)
+        public async Task<IActionResult> GetByUserId([FromQuery] Guid userId)
         {
-            //TO-DO: codigo para obter produtos de um usuario
-            return Ok(userId);
+            var products = await _productService.GetByUserIdAsync(userId);
+            return Ok(products);
         }
 
         [HttpPut("{productId}")]
-        public IActionResult Update([FromQuery] string productId, [FromBody]ProductViewModel model)
+        public async Task<IActionResult> Update([FromQuery] Guid productId, [FromBody]ProductViewModel model)
         {
-            //TO-DO: codigo para atualizar produto
+            await _productService.UpdateAsync(productId, model);
+
             return Ok();
         }
 
         [HttpPost]
-        public IActionResult Create([FromBody]ProductViewModel model)
+        public async Task<IActionResult> Create([FromBody]ProductViewModel model)
         {
-            //TO-DO: codigo para criar produto
-            return Ok(model);
+            var product = await _productService.CreateAsync(model);
+            return Ok(product);
         }
 
     }

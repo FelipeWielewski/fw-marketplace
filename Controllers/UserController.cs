@@ -1,50 +1,54 @@
-﻿using FW.Marketplace.Model;
+﻿using FW.Marketplace.Interfaces;
 using FW.Marketplace.ViewModel;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Threading.Tasks;
 
 namespace FW.Marketplace.Controllers
 {
     [Route("[controller]")]
     public class UserController : Controller
     {
-
-        //TO-DO: Injetar serviços
-        public UserController()
+        readonly IUserService _userService;
+                
+        public UserController(IUserService userService)
         {
+            _userService = userService;
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
-            //TO-DO: codigo para obter lista de usuarios
-            return Ok();
+            var users = await _userService.GetAsync();   
+            return Ok(users);
         }
 
         [HttpGet("{userId}")]
-        public IActionResult GetById([FromQuery] string userId)
+        public async Task<IActionResult> GetById([FromQuery] Guid userId)
         {
-            //TO-DO: codigo para obter usuario especifico
-            return Ok(userId);
+            var user = await _userService.GetByIdAsync(userId);
+            return Ok(user);
         }
 
-        [HttpPut("{buyerId}")]
-        public IActionResult Update([FromQuery] string userId, [FromBody]UserViewModel model)
+
+        [HttpPut("{userId}")]
+        public async Task<IActionResult> Update([FromQuery] Guid userId, [FromBody]UserViewModel model)
         {
-            //TO-DO: codigo para atualizar usuario
+            await _userService.UpdateAsync(userId, model);
             return Ok();
         }
 
         [HttpPost]
-        public IActionResult Create([FromBody]CreateUserViewModel model)
+        public async Task<IActionResult> Create([FromBody]CreateUserViewModel model)
         {
-            //TO-DO: codigo para criar usuario
-            return Ok(model);
+            var user = await _userService.CreateAsync(model);
+            return Ok(user);
         }
-
-        [HttpPut("{buyerid}/changepassword")]
-        public IActionResult UpdatePassword([FromQuery] string userId, [FromQuery] string newPassword)
+        
+        [HttpPut("{userId}/changepassword")]
+        public async Task<IActionResult> UpdatePassword([FromQuery] Guid userId, [FromQuery] string newPassword)
         {
-            //TO-DO: codigo para alterar a senha do usuario
+            await _userService.UpdatePasswordAsync(userId, newPassword);
             return Ok();
         }
 

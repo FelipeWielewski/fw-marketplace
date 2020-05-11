@@ -1,22 +1,25 @@
-﻿using FW.Marketplace.ViewModel;
+﻿using FW.Marketplace.Interfaces;
+using FW.Marketplace.ViewModel;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace FW.Marketplace.Controllers
 {
     [Route("[controller]")]
     public class AccountController : Controller
     {
+        IAccountService _accountService;
 
-        //TO-DO: Injetar serviços
-        public AccountController()
+        public AccountController(IAccountService accountService)
         {
+            _accountService = accountService;
         }
 
         [HttpPost("login")]
-        public IActionResult Login([FromBody]LoginViewModel model)
+        public async Task<IActionResult> Login([FromBody]LoginViewModel model)
         {
-            //TO-DO: codigo para implementar login
-            return Ok();
+            var result = await _accountService.LoginAsync(model);
+            return Ok(result);
         }
     }
 }
