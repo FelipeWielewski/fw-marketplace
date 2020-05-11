@@ -31,6 +31,7 @@ namespace FW.Marketplace
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IAccountService, AccountService>();
+            services.AddTransient<ISearchService, SearchService>();
             services.AddControllers();
         }
 

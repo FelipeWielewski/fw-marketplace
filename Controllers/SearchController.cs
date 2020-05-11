@@ -1,23 +1,24 @@
-﻿using FW.Marketplace.Model;
-using FW.Marketplace.ViewModel;
+﻿using FW.Marketplace.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace FW.Marketplace.Controllers
 {
     [Route("[controller]")]
     public class SearchController : Controller
     {
-
-        //TO-DO: Injetar serviços
-        public SearchController()
+        ISearchService _searchService;
+        
+        public SearchController(ISearchService searchService)
         {
+            _searchService = searchService;
         }
 
         [HttpGet("fromquery")]
-        public IActionResult SearchByQuery([FromQuery]string text, [FromQuery]int page, [FromQuery]int size)
+        public async Task<IActionResult> SearchByQuery([FromQuery]string text, [FromQuery]int page, [FromQuery]int size)
         {
-            //TO-DO: codigo para obter lista de produtos com base em uma query
-            return Ok();
+            var result = await _searchService.SearchByQueryAsync(text, page, size);
+            return Ok(result);
         }
     }
 }
